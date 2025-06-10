@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>{{ title }}</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 2rem;
+      background-color: #f7f7f7;
+    }
+    .newsletter {
+      background-color: #fff;
+      padding: 1.5rem;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    .article {
+      margin-bottom: 2rem;
+    }
+    h1, h2, h3 {
+      color: #333;
+    }
+    a {
+      color: #1a73e8;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="newsletter">
+    <h1>{{ title }}</h1>
+    <p><strong>Date:</strong> {{ date }}</p>
+    
+    {% for item in articles %}
+    <div class="article">
+      <h3>{{ item.title }}</h3>
+      <p>{{ item.summary }}</p>
+      <a href="{{ item.link }}" target="_blank">Read more</a>
+    </div>
+    {% endfor %}
+    
+    <hr>
+    <p>Thanks for reading. Want more? <a href="#">Subscribe</a> to stay updated!</p>
+  </div>
+</body>
+</html>
